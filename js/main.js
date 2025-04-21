@@ -113,4 +113,21 @@ window.addEventListener('scroll', () => {
     if (hero) {
         hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
     }
+});
+
+// Contact buttonları için sticky scroll
+const contactButtons = document.querySelector('.contact-buttons');
+const hero = document.querySelector('.hero');
+
+window.addEventListener('scroll', () => {
+    if (hero && contactButtons) {
+        const heroBottom = hero.offsetTop + hero.offsetHeight;
+        const scrollPosition = window.scrollY + window.innerHeight;
+        
+        if (scrollPosition > heroBottom) {
+            contactButtons.classList.add('sticky');
+        } else {
+            contactButtons.classList.remove('sticky');
+        }
+    }
 }); 

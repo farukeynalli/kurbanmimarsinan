@@ -75,6 +75,7 @@ body {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .hero-content {
@@ -194,6 +195,7 @@ body {
     opacity: 0;
     transform: translateY(50px);
     transition: all 1s ease;
+    position: relative;
 }
 
 .services.visible {
@@ -333,6 +335,26 @@ body {
     font-family: 'Cinzel', serif;
     font-weight: bold;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.service-content h3::after {
+    content: attr(data-group);
+    font-size: 2rem;
+    color: white;
+    font-weight: 700;
+    margin-left: 0.5rem;
+    background-color: #2F5233;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .service-content .price {
@@ -357,41 +379,44 @@ body {
 
 /* İletişim Butonları */
 .contact-buttons {
-    position: fixed;
-    right: 30px;
+    position: absolute;
     bottom: 30px;
+    right: 30px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    z-index: 1000;
+    gap: 1rem;
+    z-index: 9999;
 }
 
-.contact-button {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
+.contact-buttons.sticky {
+    position: fixed;
+}
+
+.contact-buttons a {
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: rgba(82, 158, 91, 0.85);
+    backdrop-filter: blur(5px);
     color: white;
     text-decoration: none;
-    font-size: 24px;
+    font-weight: 500;
     transition: all 0.3s ease;
-    animation: pulse 2s infinite;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(47, 82, 51, 0.3);
 }
 
-.phone-button {
-    background: linear-gradient(45deg, #00c853, #64dd17);
+.contact-buttons a:hover {
+    transform: translateY(-5px) scale(1.1);
+    background: rgba(47, 82, 51, 0.95);
+    box-shadow: 0 8px 25px rgba(47, 82, 51, 0.4);
 }
 
-.whatsapp-button {
-    background: linear-gradient(45deg, #25d366, #128c7e);
-}
-
-.contact-button:hover {
-    transform: scale(1.1) rotate(15deg);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+.contact-buttons i {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 /* Map Section */
