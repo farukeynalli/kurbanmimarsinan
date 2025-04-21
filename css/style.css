@@ -1,4 +1,5 @@
 /* Reset ve Genel Stiller */
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +7,14 @@
 }
 
 body {
-    font-family: 'Playfair Display', serif;
+    font-family: Rubik, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
-    background-color: #f8f5f2; /* Soft bej rengi arka plan */
+    background-color: #f8f5f2;
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -91,13 +93,56 @@ body {
 }
 
 .main-logo {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    margin-top: -30px;
 }
 
 .main-logo img {
-    width: 300px;
+    width: 158px;
     height: auto;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    background: transparent; 
+}
+
+.hero-title {
+    font-size: 80px;
+    line-height: 80px;
+    letter-spacing: 10px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: -40px;
+    padding: 0;
+}
+
+h2.hero-subtitle-elementer {
+    font-family: Rubik, sans-serif;
+    font-size: 47px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    letter-spacing: 6.3px;
+    line-height: 83px;
+    text-decoration: none solid rgb(19, 19, 19);
+    text-align: center;
+    text-indent: 0px;
+    text-transform: uppercase;
+    white-space: normal;
+    word-spacing: 0px;
+    background-attachment: scroll;
+    background-color: rgba(245, 166, 8, 0.4);
+    background-image: none;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    color: rgb(0, 0, 0);
+    height: 80px;
+    width: 100%;
+    margin-top: 0;
+    position: static;
+    display: block;
 }
 
 .hero-text {
@@ -105,8 +150,13 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    width: 100%;
 }
-
+.kesim-title-block {
+    margin-bottom: 140px; /* Butonlar ve görseller için alan açıyor */
+    position: relative;
+    z-index: 1;
+}
 .hero-subtitle {
     color: #fff;
     font-size: 2.2rem;
@@ -124,22 +174,24 @@ body {
 
 .hero-buttons {
     display: flex;
-    gap: 2rem;
-    margin-top: 1rem;
+    justify-content: center;
+    gap: 15rem;
+    margin-top: -40px;
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 1s ease 0.6s forwards;
+    width: 100%;
 }
 
 .hero-button {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
+    gap: 1rem;
+    padding: 0.8rem 1.6rem;
     border-radius: 50px;
     color: white;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     transition: all 0.3s ease;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
@@ -164,25 +216,214 @@ body {
     font-size: 1.4rem;
 }
 
+.contact-buttons-container {
+    position: relative;
+    z-index: 2;
+    margin-top: 50px; /* Yazıdan uzaklaştırıyor */
+    padding-top: 30px;
+}
+
+
+@media (max-width: 768px) {
+    .kesim-title-block {
+        margin-bottom: 180px;
+    }
+    
+    .teslimat-img {
+        width: 120px;
+        height: 120px;
+        bottom: -150px;
+    }
+}
+
+.teslimat-img {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    bottom: -180px; /* Yazıdan uzaklaştırıyor */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
 /* Logo Section */
 .logo-section {
-    padding: 4rem 0;
-    background: white;
-    text-align: center;
+    padding: 3rem 0;
+    background-color: #f8f5f2;
 }
+
+.logo-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.logo-left {
+    flex: 1;
+    padding: 1rem;
+}
+
+.logo-grid {
+    flex: 1;
+    max-width: 50%;
+}
+
+.logo-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .hero-buttons {
+        gap: 8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 60px;
+        line-height: 60px;
+        letter-spacing: 6px;
+    }
+    
+    h2.hero-subtitle-elementer {
+        font-size: 36px;
+        line-height: 60px;
+        letter-spacing: 4px;
+    }
+    
+    .hero-buttons {
+        gap: 5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 48px;
+        line-height: 48px;
+        letter-spacing: 4px;
+    }
+    
+    h2.hero-subtitle-elementer {
+        font-size: 28px;
+        line-height: 48px;
+        letter-spacing: 3px;
+        height: 60px;
+    }
+    
+    .hero-buttons {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    .teslimat-img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .logo-section .container {
+        flex-direction: column;
+    }
+    
+    .logo-grid {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 36px;
+        line-height: 36px;
+        letter-spacing: 3px;
+    }
+    
+    h2.hero-subtitle-elementer {
+        font-size: 22px;
+        line-height: 36px;
+        letter-spacing: 2px;
+        height: 50px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .teslimat-img {
+        width: 100px;
+        height: 100px;
+        margin: 1rem 0;
+    }
+    
+    .main-logo img {
+        width: 120px;
+    }
+}
+
+
+/* Logo Section */
+.logo-section {
+    padding: 3rem 0;
+    background: white;
+}
+
+
+
+/* buraya deniyorum*/
+
+.logo-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.logo-left {
+    flex: 1;
+    padding: 1rem;
+}
+
+
+
+
 
 .logo-grid {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 2rem auto;
-    max-width: 800px;
+    flex: 1;
+    max-width: 50%;
+}
+.deneme-srs {
+    color: #ffffff;
+    margin-top:-45px;
+    margin-bottom:50px;
+    font-size: 2.5rem;
+
 }
 
 .logo-grid img {
-    max-width: 100%;
-    height: auto;
     transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .logo-grid img:hover {
