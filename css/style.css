@@ -12,6 +12,10 @@ body {
     overflow-x: hidden;
     background-color: #f8f5f2;
 }
+.angaradan_misafirlerim {
+    background-color: transparent;
+    size: 20px;
+}
 
 .container {
     width: 100%;
@@ -101,48 +105,42 @@ body {
     width: 158px;
     height: auto;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
-    background: transparent; 
+    background: transparent;
 }
 
 .hero-title {
-    font-size: 80px;
+    font-family: Rubik, sans-serif;
+    font-size: 60px;
     line-height: 80px;
-    letter-spacing: 10px;
-    font-family: 'Arial', sans-serif;
     font-weight: bold;
     justify-content: center;
     text-align: center;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: -40px;
+    margin-bottom: -20px;
     padding: 0;
 }
 
 h2.hero-subtitle-elementer {
     font-family: Rubik, sans-serif;
-    font-size: 47px;
+    font-size: 70px;
     font-style: normal;
     font-variant: normal;
-    font-weight: 400;
-    letter-spacing: 6.3px;
-    line-height: 83px;
     text-decoration: none solid rgb(19, 19, 19);
-    text-align: center;
-    text-indent: 0px;
-    text-transform: uppercase;
-    white-space: normal;
-    word-spacing: 0px;
-    background-attachment: scroll;
-    background-color: rgba(245, 166, 8, 0.4);
-    background-image: none;
-    background-position: 0% 0%;
-    background-repeat: repeat;
-    color: rgb(0, 0, 0);
     height: 80px;
     width: 100%;
     margin-top: 0;
     position: static;
     display: block;
+    font-size: 34px; /* Font boyutunu ayarlayın */
+    font-weight: 600; /* Daha belirgin bir ağırlık */
+    text-align: center; /* Yazıyı ortala */
+    text-transform: uppercase;
+    color: #333; /* Daha şık bir yazı rengi */
+    background-color: rgba(192, 159, 88, 0.815); /* Sarı rengin daha şeffaf bir tonu    */
+    padding: 0.8rem 1.5rem; /* Dikey ve yatay iç boşluk */
+    border-radius: 8px; /* Köşeleri hafifçe yuvarlat */
+    margin-bottom: 1.5rem; /* Alt boşluğu ayarlayın */
 }
 
 .hero-text {
@@ -152,11 +150,13 @@ h2.hero-subtitle-elementer {
     gap: 2rem;
     width: 100%;
 }
+
 .kesim-title-block {
     margin-bottom: 140px; /* Butonlar ve görseller için alan açıyor */
     position: relative;
     z-index: 1;
 }
+
 .hero-subtitle {
     color: #fff;
     font-size: 2.2rem;
@@ -228,22 +228,21 @@ h2.hero-subtitle-elementer {
     .kesim-title-block {
         margin-bottom: 180px;
     }
-    
+
     .teslimat-img {
-        width: 120px;
-        height: 120px;
+        width: 420px;
+        height: 420px;
         bottom: -150px;
     }
 }
 
 .teslimat-img {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    bottom: -180px; /* Yazıdan uzaklaştırıyor */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
+    size: 100px;
+    position: center;
+    width: 450px;
+    height: 450px;
+    bottom: 20px; /* Yazıdan uzaklaştırıyor */
+    
 }
 
 /* Logo Section */
@@ -266,7 +265,7 @@ h2.hero-subtitle-elementer {
 
 .logo-grid {
     flex: 1;
-    max-width: 50%;
+    max-width: 80%;
 }
 
 .logo-grid img {
@@ -281,6 +280,7 @@ h2.hero-subtitle-elementer {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -300,80 +300,237 @@ h2.hero-subtitle-elementer {
         line-height: 60px;
         letter-spacing: 6px;
     }
-    
+
     h2.hero-subtitle-elementer {
         font-size: 36px;
-        line-height: 60px;
-        letter-spacing: 4px;
+        text-align: center;
+        padding: 0.8rem 1.5rem;
     }
-    
+
     .hero-buttons {
         gap: 5rem;
     }
 }
 
-@media (max-width: 768px) {
+
+.hero {
+    height: auto; /* Yüksekliği içeriğe göre ayarla */
+    padding: 2rem 1rem 6rem; /* Üst, yan ve alt boşlukları ayarla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('../images/background.png') center/cover fixed;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; /* Öğeler arası boşluğu azalt */
+    width: 100%;
+    max-width: 90%; /* İçeriğin yanlardan boşluklu durmasını sağla */
+}
+
+.main-logo {
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.main-logo img {
+    width: 120px; /* Logo boyutunu küçült */
+    height: auto;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    background: transparent;
+}
+
+
+
+
+h3.deneme-srs {
+    font-family: Rubik, sans-serif;
+    font-size: 2rem; /* Diğer başlıkların boyutunu küçült */
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 0.8rem !important; /* Önemli: Inline stili ez */
+    margin-bottom: 0.8rem; /* Boşluğu azaltın */
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column; /* Butonları alt alta sırala */
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 280px; /* Butonların maksimum genişliği */
+    margin-top: 1rem;
+}
+
+.hero-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    width: 100%; /* Butonların tam genişlikte olmasını sağla */
+}
+
+.hero-button i {
+    font-size: 1.1rem;
+}
+
+.teslimat-img {
+    width: 200px; /* Teslimat görselini küçült */
+    height: auto;
+    position: relative; /* Göreceli konumlandırma */
+    z-index: 3; /* Diğer içeriklerin üzerinde kalmasını sağla */
+    margin-top: 1.5rem; /* Üst boşluk ekle */
+}
+
+/* Ekran genişliği 480px ve altı için daha küçük ayarlamalar */
+@media (max-width: 480px) {
     .hero-title {
-        font-size: 48px;
-        line-height: 48px;
-        letter-spacing: 4px;
-    }
-    
-    h2.hero-subtitle-elementer {
         font-size: 28px;
-        line-height: 48px;
-        letter-spacing: 3px;
-        height: 60px;
+        line-height: 32px;
+        letter-spacing: 1px;
     }
-    
+
+    h2.hero-subtitle-elementer {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 1px;
+        padding: 0.4rem 0.8rem;
+    }
+
+    h3.deneme-srs {
+        font-size: 1.3rem;
+    }
+
+    .main-logo img {
+        width: 100px;
+    }
+
     .hero-buttons {
-        flex-direction: row;
-        gap: 2rem;
+        max-width: 240px;
     }
-    
+
+    .hero-button {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .hero-button i {
+        font-size: 1rem;
+    }
+
+
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .hero {
+        padding-bottom: 10rem; /* Alt boşluğu artırarak buton ve görsel için yer aç */
+    }
+
+    .kesim-title-block {
+        margin-bottom: 20px; /* Diğer öğelerle mesafeyi ayarla */
+    }
+
+    .hero-buttons {
+        position: relative; /* Bağlantı butonlarını göreceli konumlandır */
+        z-index: 3; /* Yazıların üzerinde kalmasını sağla */
+        margin-top: 2rem; /* Üst boşluğu ayarla */
+    }
+
     .teslimat-img {
-        width: 120px;
-        height: 120px;
+        position: relative; /* Teslimat görselini göreceli konumlandır */
+        z-index: 2; /* Butonların altında kalmasını sağla (gerekirse artırılabilir) */
+        bottom: auto; /* Bottom değerini kaldır */
+        top: auto; /* Top değerini kaldır */
+        margin-top: 2rem; /* Üst boşluk ekle */
+        left: 50%;
+        transform: translateX(-50%);
     }
-    
-    .logo-section .container {
-        flex-direction: column;
-    }
-    
-    .logo-grid {
-        max-width: 100%;
+
+    .hero-content {
+        padding-bottom: 8rem; /* Yazıların altta kalmaması için alt padding ekle */
     }
 }
 
 @media (max-width: 576px) {
-    .hero-title {
-        font-size: 36px;
-        line-height: 36px;
-        letter-spacing: 3px;
+    .hero {
+        padding-bottom: 12rem; /* Daha küçük ekran için alt boşluğu artır */
     }
-    
-    h2.hero-subtitle-elementer {
-        font-size: 22px;
-        line-height: 36px;
-        letter-spacing: 2px;
-        height: 50px;
+
+    .hero-content {
+        padding-bottom: 10rem; /* Daha küçük ekran için alt padding ayarı */
     }
-    
+
     .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
     }
-    
+
     .teslimat-img {
-        width: 100px;
-        height: 100px;
-        margin: 1rem 0;
+        margin-top: 1.5rem;
     }
-    
-    .main-logo img {
-        width: 120px;
+}
+
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 30px;
+        line-height: 30px;
+        letter-spacing: 2px;
+    }
+
+    h2.hero-subtitle-elementer {
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 0.5px;
+        padding: 0.6rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+        padding: 0.8rem;
+    }
+
+    .kesim-title-block {
+        margin-bottom: 100px; /* Daha küçük ekran için boşluk ayarı */
     }
 }
 
@@ -384,7 +541,112 @@ h2.hero-subtitle-elementer {
     background: white;
 }
 
+/* Logo Section - Mobil Uyumlu Düzenleme */
+.logo-section {
+    padding: 2rem 1rem; /* Üst, alt ve yan boşlukları ayarla */
+    background: white;
+}
 
+.logo-section .container {
+    display: flex;
+    flex-direction: column; /* Mobil cihazlarda alt alta sırala */
+    align-items: center; /* Ortala */
+    gap: 2rem; /* Öğeler arası boşluk */
+    width: 100%;
+    max-width: 90%; /* İçeriğin yanlardan boşluklu durmasını sağla */
+    margin: 0 auto; /* Yatayda ortala */
+}
+
+.logo-left {
+    text-align: center; /* Yazıları ortala */
+}
+
+.logo-left h2 {
+    color: #2F5233;
+    font-size: 2rem; /* Başlık boyutunu ayarla */
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+}
+
+.logo-left p {
+    color: #666;
+    font-size: 1rem; /* Metin boyutunu ayarla */
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.logo-grid {
+    max-width: 100%; /* Görselin tam genişlikte olmasını sağla */
+}
+
+.logo-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* İsteğe bağlı köşe yuvarlaklığı */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* İsteğe bağlı gölge */
+}
+
+@media (max-width: 768px) {
+    .logo-section .logo-grid img {
+        width: 80% !important;
+        max-width: 300px !important;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-section .logo-grid img {
+        width: 90% !important;
+        max-width: 280px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .teslimat-img {
+        width: 120px; /* Boyutunu mobil için ayarlayın */
+        height: auto;
+        position: absolute; /* Mutlak konumlandırma */
+        left: 50%; /* Yatayda ortanın sol kenarına getir */
+        transform: translateX(-50%); /* Sol kenarı kendi genişliğinin yarısı kadar sola kaydırarak ortala */
+        bottom: 20px; /* Alt boşluğu ayarlayın (isteğe bağlı) */
+        top: auto; /* Top değerini sıfırla */
+        margin-top: 0; /* Üst boşluğu sıfırla */
+    }
+}
+
+@media (max-width: 576px) {
+    .teslimat-img {
+        width: 100px; /* Daha küçük ekranlar için boyut */
+        bottom: 15px; /* Daha küçük ekran için alt boşluk */
+    }
+}
+
+
+
+/* Daha küçük ekranlar için (örneğin 480px ve altı) */
+@media (max-width: 480px) {
+    .logo-left h2 {
+        font-size: 1.8rem;
+    }
+
+    .logo-left p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    h2.hero-subtitle-elementer {
+        font-size: 18px;
+        padding: 0.6rem 1rem;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+    }
+
+    h3.deneme-srs {
+        font-size: 1.3rem;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem;
+    }
+}
 
 /* buraya deniyorum*/
 
@@ -394,12 +656,11 @@ h2.hero-subtitle-elementer {
     justify-content: space-between;
     gap: 2rem;
 }
+
 .logo-left {
     flex: 1;
     padding: 1rem;
 }
-
-
 
 
 
@@ -411,10 +672,12 @@ h2.hero-subtitle-elementer {
     flex: 1;
     max-width: 50%;
 }
+
 .deneme-srs {
     color: #ffffff;
-    margin-top:-45px;
-    margin-bottom:50px;
+    margin-top: -45px;
+    margin-bottom: 50px;
+    
     font-size: 2.5rem;
 
 }
@@ -771,6 +1034,7 @@ h2.hero-subtitle-elementer {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -782,10 +1046,12 @@ h2.hero-subtitle-elementer {
         transform: scale(1);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
+
     50% {
         transform: scale(1.05);
         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
     }
+
     100% {
         transform: scale(1);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -973,11 +1239,11 @@ h2.hero-subtitle-elementer {
     .kucukbas-grid {
         grid-template-columns: repeat(2, minmax(280px, 300px));
     }
-    
+
     .service-image-container {
         height: 180px;
     }
-    
+
     .service-icon {
         font-size: 1.8rem;
         padding: 0.8rem;
@@ -988,13 +1254,13 @@ h2.hero-subtitle-elementer {
     .kucukbas-grid {
         grid-template-columns: minmax(280px, 300px);
     }
-    
+
     .service-image-container {
         height: 160px;
     }
-    
+
     .service-icon {
         font-size: 1.5rem;
         padding: 0.7rem;
     }
-} 
+}
